@@ -5,6 +5,11 @@ php-lifestream
   [jason@onehackoranother.com](mailto:jason@onehackoranother.com) :: 
   [@jaz303](http://twitter.com/jaz303)
 
+Released under the MIT License
+
+Synopsis
+--------
+
 php-lifestream is a small library for efficiently aggregating "life-stream" events from various third party services (although at present it only supports Twitter). It is intended to by run via `cron`.
 
 Installation
