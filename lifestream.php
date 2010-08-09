@@ -148,7 +148,7 @@ class Lifestream_Twitter extends Lifestream_Service
     
     public function fill() {
         
-        $base_url  = 'http://twitter.com/statuses/user_timeline/' . $this->params['username'] . '.json';
+        $base_url  = 'http://api.twitter.com/1/statuses/user_timeline/' . $this->params['username'] . '.json';
         $base_url .= '?count=100';
         
         if ($latest = $this->latest()) {
@@ -168,7 +168,7 @@ class Lifestream_Twitter extends Lifestream_Service
         $count = 0;
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        if (isset($this->params['username'])) {
+        if (isset($this->params['username']) && isset($this->params['password'])) {
             curl_setopt($ch, CURLOPT_USERPWD, "{$this->params['username']}:{$this->params['password']}");
         }
         $result = curl_exec($ch);
